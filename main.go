@@ -85,7 +85,7 @@ func main() {
 
 func usageOut() {
 	Console.Info("-------------------------------------------")
-	Console.Info(" GitFunction v1.12 Usage")
+	Console.Info(" GitFunction v1.0.0 Usage")
 	Console.Info("-------------------------------------------")
 
 	Console.Info("\n   ● ブランチ関連")

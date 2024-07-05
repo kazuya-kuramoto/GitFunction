@@ -1,25 +1,78 @@
-# GitFunctions
-Git操作を高速化します。
+# GitFunction
+Gitのコマンドを省略化して、普段操作をするコマンドの量を75%程度圧縮できます。
+様々なコマンドの省コマンド化をしていますので、普段の業務効率を改善できます。
 
-# Setup
-```bash
-cd $GOPATH
-cd src/github.dena.jp/kazuya-kuramoto
-git clone git@github.dena.jp:kazuya-kuramoto/GitFunction.git
-cd GitFunction
-make install
-```
+## 利用可能環境
+- MAC OS
+- Windows
+- UNIX
 
-# Update
+## 免責事項
+- このソフトウェアを使用し、データの破損等が発生しいかなる損害が発生したとしてもこのソフトウェアの開発者は責任を取りません。
+- MITライセンスとして提供をしており、業務上の利用には専門の部署にて使用の確認を行なってください。
+- このプロジェクトは有志による開発であって、利益を獲得することを目的とした活動ではありません。
+- Gitのバージョンによってはこのソフトウェアが正しく動作しないことがあります。
+- 導入やバグレポートの対応など、サポートは一切いたしません。
+- 動作環境、利用可能環境とは動作を保証するものではありませんので、必ず動作の確認は個人の責任として行なってください。
+- 転売、再配布、作者を偽る行為はご遠慮ください。
+
+## バージョン
+v1.0.0
+
+### リリースからのインストール
+
+1. [リリースページ](https://github.com/yourusername/yourrepository/releases)にアクセスします。
+2. 最新のリリースを選択します。
+3. 適切なバイナリファイルをダウンロードします。
+   - Windows: `gf.exe`
+   - UNIX/Linux/MacOS: `gf`
+
+#### Windows
+
+1. ダウンロードした`gf.exe`ファイルを適当なディレクトリに配置します。
+2. コマンドプロンプトまたはPowerShellを開き、次のコマンドを実行してパスを通します（任意）:
+
+   ```sh
+   setx PATH "%PATH%;C:\path\to\directory"
+   ```
+
+3. インストールが完了しました。以下のコマンドで動作確認を行ってください:
+
+   ```sh
+   gf --version
+   ```
+
+#### UNIX/Linux/MacOS
+
+1. ダウンロードした`gf`ファイルを`/usr/local/bin`にコピーします:
+
+   ```sh
+   sudo cp gf /usr/local/bin/
+   ```
+
+2. 実行権限を付与します:
+
+   ```sh
+   sudo chmod +x /usr/local/bin/gf
+   ```
+
+3. インストールが完了しました。以下のコマンドで動作確認を行ってください:
+
+   ```sh
+   gf --version
+   ```
+
+## Update
+
 ```bash
 gf update
 ```
 
-# Usage
+## Usage
 
 ```
 -------------------------------------------
- GitFunction v1.11 Usage
+ GitFunction v1.0.0 Usage
 -------------------------------------------
 
    ● ブランチ関連
@@ -55,5 +108,4 @@ gf update
   ● マージ
     ◇ ローカルブランチをマージ: gf merge <branchName>
     ◇ リモートブランチをマージ: gf merge -r <branchName>
-
 ```
