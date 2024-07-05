@@ -3,10 +3,10 @@ name: Go Build
 on:
   push:
     branches:
-      - develop
+      - main
   pull_request:
     branches:
-      - develop
+      - main
 
 jobs:
   build:
@@ -42,6 +42,14 @@ jobs:
       run: |
         GOOS=windows GOARCH=386 go build -o bin/gf.exe main.go
 
+    - name: Build for MacOS (Intel)
+      run: |
+        GOOS=darwin GOARCH=amd64 go build -o bin/gf-mac-amd64 main.go
+
+    - name: Build for MacOS (Apple Silicon)
+      run: |
+        GOOS=darwin GOARCH=arm64 go build -o bin/gf-mac-arm64 main.go
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v2
       with:
@@ -49,3 +57,5 @@ jobs:
         path: |
           bin/gf
           bin/gf.exe
+          bin/gf-mac-amd64
+          bin/gf-mac-arm64

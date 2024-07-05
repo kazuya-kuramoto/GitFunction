@@ -16,16 +16,15 @@ Gitのコマンドを省略化して、普段操作をするコマンドの量�
 - 動作環境、利用可能環境とは動作を保証するものではありませんので、必ず動作の確認は個人の責任として行なってください。
 - 転売、再配布、作者を偽る行為はご遠慮ください。
 
-## バージョン
-v1.0.0
-
 ### リリースからのインストール
 
 1. [リリースページ](https://github.com/yourusername/yourrepository/releases)にアクセスします。
 2. 最新のリリースを選択します。
 3. 適切なバイナリファイルをダウンロードします。
    - Windows: `gf.exe`
-   - UNIX/Linux/MacOS: `gf`
+   - UNIX/Linux: `gf`
+   - MacOS (Intel): `gf-mac-amd64`
+   - MacOS (Apple Silicon): `gf-mac-arm64`
 
 #### Windows
 
@@ -42,12 +41,52 @@ v1.0.0
    gf --version
    ```
 
-#### UNIX/Linux/MacOS
+#### UNIX/Linux
 
 1. ダウンロードした`gf`ファイルを`/usr/local/bin`にコピーします:
 
    ```sh
    sudo cp gf /usr/local/bin/
+   ```
+
+2. 実行権限を付与します:
+
+   ```sh
+   sudo chmod +x /usr/local/bin/gf
+   ```
+
+3. インストールが完了しました。以下のコマンドで動作確認を行ってください:
+
+   ```sh
+   gf --version
+   ```
+
+#### MacOS (Intel)
+
+1. ダウンロードした`gf-mac-amd64`ファイルを`/usr/local/bin`にコピーします:
+
+   ```sh
+   sudo cp gf-mac-amd64 /usr/local/bin/gf
+   ```
+
+2. 実行権限を付与します:
+
+   ```sh
+   sudo chmod +x /usr/local/bin/gf
+   ```
+
+3. インストールが完了しました。以下のコマンドで動作確認を行ってください:
+
+   ```sh
+   gf --version
+   ```
+
+#### MacOS (Apple Silicon)
+
+1. ダウンロードした`gf-mac-arm64`ファイルを`/usr/local/bin`にコピーします:
+
+   ```sh
+   sudo cp gf-mac-arm64 /usr/local/bin/gf
    ```
 
 2. 実行権限を付与します:

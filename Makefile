@@ -1,5 +1,3 @@
-#!/usr/bin/make -f
-
 ########## CONST ##########
 # サイレントモードで実行
 .SILENT:
@@ -10,6 +8,10 @@ BUILD_TARGET=main.go
 # Windowsの場合のOS/アーキテクチャの定数
 GOOS_WIN=windows
 GOARCH_WIN=386
+# MacOSの場合のOS/アーキテクチャの定数
+GOOS_MAC=darwin
+GOARCH_MAC_AMD64=amd64
+GOARCH_MAC_ARM64=arm64
 
 ########## COMMAND ##########
 install:
@@ -25,6 +27,16 @@ build:
 	GOOS=$(GOOS_WIN) \
 	GOARCH=$(GOARCH_WIN) \
 	go build -o bin/$(APP_NAME).exe $(BUILD_TARGET)
+
+	# MacOS (Intel)
+	GOOS=$(GOOS_MAC) \
+	GOARCH=$(GOARCH_MAC_AMD64) \
+	go build -o bin/$(APP_NAME)-mac-amd64 $(BUILD_TARGET)
+
+	# MacOS (Apple Silicon)
+	GOOS=$(GOOS_MAC) \
+	GOARCH=$(GOARCH_MAC_ARM64) \
+	go build -o bin/$(APP_NAME)-mac-arm64 $(BUILD_TARGET)
 
 	echo "ビルドが完了したでございます。"
 
